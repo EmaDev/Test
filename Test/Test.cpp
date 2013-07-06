@@ -176,8 +176,9 @@ private:
 	Token _token;
 };
 
-
 vector<SyntaxError> syntaxErrors;
+
+void interpreter();
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -211,6 +212,7 @@ int _tmain(int argc, _TCHAR* argv[])
 			else
 			{
 				cout<<"Syntax correct"<<endl;
+				interpreter();
 			}
 			break;
 		case PARSE_UNEXPECTED_CHARACTERS:
@@ -403,4 +405,17 @@ void syntaxCheck()
 	indexSym = 0;
 	getSym();
 	statement();
+}
+
+void exec(unsigned index)
+{
+	if(index < tokens.size())
+	{
+	
+	}
+}
+
+void interpreter()
+{
+	exec(0);
 }
